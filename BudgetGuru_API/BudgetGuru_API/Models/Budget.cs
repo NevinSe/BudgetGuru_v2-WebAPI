@@ -1,14 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BudgetGuru_API.Models
 {
-    public class Transaction
+    public class Budget
     {
-        public int TransactionID { get; set; }
+        [Key]
+        public int BudgetID { get; set; }
         public double Amount { get; set; }
-        public DateTime Date { get; set; }
-        public string? Description { get; set; }
-        public string? Type { get; set; }
+        public string? Month { get; set; }
+        public string? Year { get; set; }
 
         [ForeignKey("User")]
         public string? UserID { get; set; }
@@ -17,6 +18,5 @@ namespace BudgetGuru_API.Models
         [ForeignKey("Category")]
         public int CategoryID { get; set; }
         public Category? Category { get; set; }
-
     }
 }
