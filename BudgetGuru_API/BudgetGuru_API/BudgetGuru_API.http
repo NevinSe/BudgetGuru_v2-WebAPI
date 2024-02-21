@@ -1,0 +1,6 @@
+@BudgetGuru_API_HostAddress = http://localhost:5249
+
+GET {{BudgetGuru_API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
