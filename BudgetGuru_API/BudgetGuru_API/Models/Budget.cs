@@ -1,5 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using BudgetGuru_API.Data;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.OpenApi;
+using Microsoft.EntityFrameworkCore;
 
 namespace BudgetGuru_API.Models
 {
@@ -19,4 +23,6 @@ namespace BudgetGuru_API.Models
         public int CategoryID { get; set; }
         public Category? Category { get; set; }
     }
+
+
 }

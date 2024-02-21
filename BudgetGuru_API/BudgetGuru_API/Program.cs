@@ -2,6 +2,7 @@
 using BudgetGuru_API.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using BudgetGuru_API.Controllers;
 
 namespace BudgetGuru_API
 {
@@ -39,6 +40,7 @@ namespace BudgetGuru_API
 
 
             app.MapControllers();
+
 
             app.Run();
         }
