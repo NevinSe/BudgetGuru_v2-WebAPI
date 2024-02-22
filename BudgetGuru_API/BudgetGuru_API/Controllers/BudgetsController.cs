@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BudgetGuru_API.Data;
 using BudgetGuru_API.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BudgetGuru_API.Controllers
 {
@@ -23,12 +24,14 @@ namespace BudgetGuru_API.Controllers
 
         // GET: api/Budgets
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Budget>>> GetBudgets()
         {
             return await _context.Budgets.ToListAsync();
         }
 
         // GET: api/Budgets/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Budget>> GetBudget(int id)
         {
@@ -44,6 +47,7 @@ namespace BudgetGuru_API.Controllers
 
         // PUT: api/Budgets/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBudget(int id, Budget budget)
         {
@@ -75,6 +79,7 @@ namespace BudgetGuru_API.Controllers
 
         // POST: api/Budgets
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Budget>> PostBudget(Budget budget)
         {
@@ -85,6 +90,7 @@ namespace BudgetGuru_API.Controllers
         }
 
         // DELETE: api/Budgets/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBudget(int id)
         {
